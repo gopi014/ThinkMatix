@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ThinkMatix">
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/desktopbrowser"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/ipad"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/windowsphone8"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/blackberry10"/>
+        <wb-resource deploy-path="/" source-path="/apps/Thinkmatix/iphone"/>
+        <property name="context-root" value="ThinkMatix"/>
+    </wb-module>
+</project-modules>

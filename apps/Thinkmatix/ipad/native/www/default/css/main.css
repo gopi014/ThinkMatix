@@ -1,0 +1,269 @@
+
+/* Stylesheet content from css/main.css in folder common */
+[data-role="page"]{
+	background: #00AEEF; 
+}
+[data-role="header"]{
+	background:#0E74BC !important;
+	color:white !important;
+}
+.table-responsive {
+border: 0px solid #ddd !important;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+color: white !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: white !important;
+opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: white !important;
+opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: white !important;
+}
+.home-grid-a {
+padding: 0;
+margin: 0;
+margin-top: 15px;
+height: 380px;
+}
+.ui-block-a, .ui-block-b {
+padding: 0;
+margin: 0 auto;
+height: 33.3%;
+}
+.ui-block-a *, .ui-block-b * {
+margin: 0 auto;
+text-align: center;
+}
+.ui-grid-a span{
+	display: block;
+}
+.ui-home-bar a, .ui-home-bar a {
+width: 50%;
+}
+.ui-bar-a, ui-bar {
+margin: 0 auto;
+padding: 0;
+height: 90%;
+width: 90%;
+max-width: 500px;
+text-align: center;
+/* Gradient set-up */
+background: #3DC8F3 !important;
+/* Border set-up */
+border: 0px solid white;
+border-radius: 0px;
+box-shadow: 0px 0px 0px #000;
+display: table;
+}
+.menu-elem {
+margin: 15px auto;
+text-align: center !important;
+}
+.menu-elem a {
+text-decoration: none;
+margin: 0 auto;
+text-align: center !important;
+}
+.menu-elem .menu-text {
+margin-top: 5px;
+font-size: 0.9em;
+color: #FFF;
+text-align:center;
+}
+.ui-bar, .ui-body {
+position: relative;
+overflow: hidden;
+display: block;
+clear: both;
+text-align: center !important;
+}
+.ui-input-text{
+border-width: 0px !important;
+}
+.ui-btn, label.ui-btn{
+border-width: 0px !important;
+}
+.ui-page {
+background: #00AEEF !important;
+}
+.Home {
+margin-top: 0px !important;
+text-align:center !important;
+font-size:1em !important;
+padding: 0.6em 0px !important;
+}
+.myTable{
+border-spacing: 5px;
+border-collapse: separate;
+border: 1px solid #00AEEF;
+}
+.myTable td,th{
+border: 1px solid #00AEEF;
+}
+.headcol {
+position:absolute;
+left:0;
+top:auto;
+border-right: 0px none #00AEEF;
+}
+.scroll{
+overflow-x:scroll;
+margin-left:10em;
+overflow-y:visible;
+padding-bottom:1px;
+}
+#no-ellipsis{
+text-overflow: initial !imporatnt;
+overflow: visible !imporatnt;
+white-space: normal !important;
+}
+.ui-icon.inline { display:inline-block; }​
+.ui-widget-header.center { text-align:center; }
+.ui-list {
+background: #3DC8F3 !important;
+color: white !important;
+font-size: 0.9 em;
+}
+.wikia{
+color: white !important;
+background: #3DC8F3 !important;
+border-width: 0.1em !important;
+}
+#wikidate{
+font-size: 0.8em !important;
+}
+.ui-bar-a{
+border-width: 0px !important;
+} 
+.ui-shadow{
+	box-shadow: none !important;
+}
+.btn-bg{
+	background: none !important;
+	
+}
+.ui-listview > li p{
+	font-size: 0.9em;
+	white-space: normal;
+}
+.ui-btn-active{
+	background-color: #38C !important;
+border-color: #38C !important;
+color: #FFF !important;
+text-shadow: 0px 1px 0px #059 !important;
+}
+#shimanager {
+    color: white;
+    border: 1px solid white;
+    font: bold 12px helvetica;
+    padding: 0;
+    margin-top:10px;
+    width: 100px;
+    -webkit-border-radius: 8px;
+    
+}
+
+#shimanager thead{
+	background-color: #0E74BC;
+}
+     
+#shimanager tr td {
+    color: white;
+    border-bottom: 1px solid #b4b4b4;
+    border-right: 1px solid #b4b4b4;
+    padding: 10px 10px 10px 10px;
+    background-image: -webkit-linear-gradient(top, blue, #eee);
+}
+         
+#shimanager tr td:last-child {
+    border-right: none;
+}
+
+#shimanager tr:last-child td {
+    border-bottom: none;
+}
+
+th,td {
+    padding: 5px;
+    white-space: nowrap;
+    }
+
+.table1 {
+    float: left; 
+    border: 0px solid white;  
+    }        
+.table2 {
+    overflow: auto;  
+    border: 0px solid white;
+    }
+.table1,.table2 {
+color: white;
+font: bold 12px helvetica;
+}
+.table1 tr td,.table2 tr td{
+	padding: 10px 10px 10px 10px;
+}
+.table1 tr td:last-child {
+border-right: none;
+}
+.table1 tr:last-child td {
+border-bottom: none;
+}
+.table2 tr td:last-child {
+border-right: none;
+}
+.table2 tr:last-child td {
+border-bottom: none;
+} 
+.containing-element{
+	text-align: center !important;
+}
+.ui-header,.ui-title{
+	overflow: visible !important;
+}
+.ui-listview > li h1, .ui-listview > li h2, 
+.ui-listview > li h3, .ui-listview > li h4, 
+.ui-listview > li h5, .ui-listview > li h6{
+	white-space: normal;
+}
+.center-wrapper{
+  text-align: center;
+} 
+.ui-page-theme-b .ui-btn, html .ui-bar-b .ui-btn, html .ui-body-b .ui-btn, html body .ui-group-theme-b .ui-btn, html head + body .ui-btn.ui-btn-b, .ui-page-theme-b .ui-btn:visited, html .ui-bar-b .ui-btn:visited, html .ui-body-b .ui-btn:visited, html body .ui-group-theme-b .ui-btn:visited, html head + body .ui-btn.ui-btn-b:visited {
+   
+    background-color: #0E74BC !important;
+    border-color: #0E74BC !important;
+    color: #FFF;
+    text-shadow: 0px 1px 0px #111;
+}
+.ui-body-b {
+background-color: #00AEEF !important ;
+border-color: #0E74BC !important;
+text-shadow: 0px 1px 0px #111;
+color: #FFF;
+}
+/* Stylesheet content from css/main.css in folder ipad */
+/*	 Licensed Materials - Property of IBM
+	 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+	 US Government Users Restricted Rights - Use, duplication or
+     disclosure restricted by GSA ADP Schedule Contract with IBM Corp. */
+     
+/* this CSS file extends the application CSS file found under common\css */
+
+/*Optional iOS 7 status bar filler*/
+#wl_ios7bar{
+	background-color: white;
+	height: 15pt;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+}
+body.wl_ios7{
+	padding-top: 15pt;
+}

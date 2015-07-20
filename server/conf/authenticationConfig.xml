@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+		<!-- Licensed Materials - Property of IBM
+			 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+			 US Government Users Restricted Rights - Use, duplication or
+             disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->	
+  <securityTests>
+        <customSecurityTest name="LoginAdapter-securityTest">
+            <test realm="wl_directUpdateRealm" step="1"/>
+            <test isInternalUserID="true" realm="CustomAuthenticatorRealm"/>
+        </customSecurityTest>
+    </securityTests>
+    <realms>
+        <realm loginModule="CustomLoginModule" name="CustomAuthenticatorRealm">
+            <className>com.mypackage.MyCustomAuthenticator</className>
+        </realm>
+    </realms>
+    <loginModules>
+        <loginModule name="CustomLoginModule">
+            <className>com.mypackage.MyCustomLoginModule</className>
+        </loginModule>
+    </loginModules>
+
+</tns:loginConfiguration>

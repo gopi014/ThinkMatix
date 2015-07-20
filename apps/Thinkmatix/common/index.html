@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		    		<title>Thinkmatix</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    		<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
+    		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.0/dojo/dojo.js" data-dojo-   config="async: true"></script>
+    	</head>
+    	<body style="display: none;">
+    		<!--application UI goes here-->
+    	<div data-role="page" id="AuthBody" >    		
+  			<div data-role="main" class="ui-content">
+			<div style="text-align:center">
+				<img src="images/image.png"   width="80" height="80">
+			</div>
+			<h2 align="center" style="color: white" >THINKMATIX</h2>
+      		<div class="container">                                                                                            
+      			<div class="table-responsive">          
+     				 <table class="table" style="width:100%">
+      					<tbody> 
+      					<tr>          
+            				<td style="width:5%"><img src="images/image2.png"  width="40" vspace="7" hspace="5"></td>
+            				<td style="width:95%">
+            				<input type="text" name="username" id="usernameInputField" placeholder="Username"  style="opacity : 0.7; background: #00AEEF; color: white"/></td>
+        				</tr> 
+        				<tr>
+            				<td style="width:5%"> <img src="images/image3.png" width="40" hspace="5" vspace="7"></td>
+            				<td style="width:95%"><input type="password" name="password" id="passwordInputField" placeholder="Password" style="opacity : 0.7; background: #00AEEF; color: white"/></td>
+          				</tr>
+          				</tbody>
+      				</table>
+      					<div id="loginmesg" style="color:red"></div>
+      					<div id="userid" style="display: none;"></div>
+      						 <button  id="loginButton" style="background: #1C75BC; color: white; font-weight: bold" >Login</button>
+
+    			</div>
+			</div>  
+			</div>
+ 				<div data-tap-toggle="false" style="background: #00AEEF ;text-align:center;border:none">
+   			 		<img src="images/image1.png"   width="60" />
+				</div>	
+		</div>
+		<div data-role="page"  id="AppBody"  >
+		<div id="teamname" style="display: none;"></div>
+		<div data-role="header">
+			<h1 class="Home">Home</h1>
+			<a href="#" data-role="button"data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+   		<div data-role="main" class="ui-content">
+		<div class="ui-grid-a home-grid-a"> 
+			
+<div class="ui-block-a"  id="smanager">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="shift();">
+<span class="menu-img"> <img src="images/shift.png" style="width: 50px; height: 55px;"> </span>
+<span class="menu-text"> Shift Schedule </span>
+</a> </div>
+</div>
+</div>
+
+<!-- 2nd elem -->
+<div class="ui-block-b" id="leavewfh">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="getleavewfh();">
+<span class="menu-img"> <img src="images/wfh.png" style="width:50px;height: 55px;"> </span>
+<span class="menu-text"> Leave/WFH </span>
+</a> </div>
+</div>
+</div>
+<!-- SECOND ROW -->
+<!-- 1st elem -->
+<div class="ui-block-a" id="start">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="startshift();">
+<span class="menu-img"> <img src="images/start_x2F_stop.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> Start/Stop Shift</span>
+</a> </div>
+</div>
+</div>
+<div class="ui-block-a" id="onshift" style="display: none;">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="onshift();">
+<span class="menu-img"> <img src="images/start_x2F_stop.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> On Shift </span>
+</a> </div>
+</div>
+</div>
+<!-- 2nd elem -->
+<div class="ui-block-b">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="qend();">
+<span class="menu-img"> <img src="images/q-end.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> Q-End Support </span>
+</a> </div>
+</div>
+</div>
+<!-- THIRD ROW -->
+<!-- 1st elem -->
+<div class="ui-block-a" id="wikiupdates">
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="wiki();">
+<span class="menu-img"> <img src="images/wiki.png" style="width: 60px;"> </span>
+<span class="menu-text"> Wiki Updates </span>
+</a> </div>
+</div>
+</div>
+<!-- 2nd elem -->
+<div class="ui-block-b" id="shiftactualuser"  >
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="shiftactual();">
+<span class="menu-img"> <img src="images/shift.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> Shift Actuals </span>
+</a> </div>
+</div>
+</div>
+<div class="ui-block-b" id="shiftactualpem" style="display: none;" >
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="shiftactualspem();">
+<span class="menu-img"> <img src="images/shift.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> Shift Actuals </span>
+</a> </div>
+</div>
+</div>
+<div class="ui-block-b" id="shiftactualmanager" style="display: none;" >
+<div class="ui-bar ui-bar-a ui-home-bar">
+<div class="menu-elem"> <a href="#" onclick="callpmviewshiftactuals()">
+<span class="menu-img"> <img src="images/shift.png" style="width: 50px;height: 55px;"> </span>
+<span class="menu-text"> Shift Actuals </span>
+</a> </div>
+</div>
+</div>
+</div>
+
+<!-- menu container -->
+</div>
+</div>
+<div data-role="page" id="wikiBody" >
+<div data-role="header">
+<a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+<h1 class="Home">Wiki Updates</h1>
+<a href="#" data-role="button"data-direction="reverse" onclick="logout();" data-transition="slide"
+data-iconpos="notext" class="ui-btn-right  btn-bg"><img src="images/logout.png" style="width: 25px;"></a>
+</div>
+<div data-role="main" class="ui-content">
+<div id="wikiContent">
+</div>
+</div>
+</div>
+<div data-role="page" id="wikiBody1" >
+<div data-role="header">
+<a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="back();"></a>
+<h1 class="Home">Wiki Updates</h1>
+<a href="#" data-role="button"data-direction="reverse" onclick="logout();" data-transition="slide"
+data-iconpos="notext" class="ui-btn-right  btn-bg"><img src="images/logout.png" style="width: 25px;"></a>
+</div>
+<div data-role="main" class="ui-content">
+<ul data-role="listview" id="recentupdates1" data-inset="true" >
+<li class="wikia">
+<h2 id="wikiheader"></h2>
+<p id="wikiauthor"></p>
+<p id="wikidesc"></p>
+</li>
+</ul>
+</div>
+</div>
+<div data-role="page" id="wfhleave" style="background: #00AEEF">
+<!--application UI goes here-->
+<div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">Leave/WFH</h1>
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+<div data-role="main" class="ui-content">
+<div data-role="tabs">
+<div data-role="navbar">
+<ul id="leavetab">
+<li><a href="#fragment-1" class="ui-btn-active ui-state-persist" id="sp1" onclick="sp1();">WFH</a></li>
+<li><a href="#fragment-2" id="sp2" onclick="sp2();">Leave</a></li>
+</ul>
+</div>
+<div id="fragment-1" style="color:white" >
+<ul id="fragment-1ul" style="margin-left: -40px;">
+
+</ul>
+</div>
+<div id="fragment-2" style="color:white" >
+<ul id="fragment-2ul" style="margin-left: -40px;">
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div data-role="page" id="shiftmanager">
+   <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">Shift Schedule</h1>
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+    <div data-role="content"> 
+    <div class="ui-field-contain" data-role="fieldcontain" id="team-select"style="position: static;">
+    <select name="select-custom-20" id="select-custom-20"  onchange="teamchange();">
+        <option value="select">Select a Team</option>
+        <option value="BOND">BOND</option>
+        <option value="PESINFRA">PESINFRA</option>
+        <option value="SAPSM">SAPSM</option>
+        <option value="EMTORIES">EMTORIES</option>
+        <option value="SAPACCESS">SAPACCESS</option>
+        <option value="PESSYSTMAINT">PESSYSTMAINT</option>
+        <option value="SAPBI">SAPBI</option>
+        <option value="CSA">CSA</option>
+        <option value="WOI">WOI</option>
+        <option value="PESTRANSPORT">PESTRANSPORT</option>
+        <option value="PESACCESSADMIN">PESACCESSADMIN</option>
+            </select>
+</div>
+<table id="emp_name" class="table1"></table>
+<div class="table2">
+<table id="emp_data"></table>
+</div> 
+
+</div>
+</div>
+<div data-role="page" id="startshift">
+   <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">Start/Stop Shift</h1>
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+		<div class="containing-element">
+	<select name="flip-min" id="flip-min" data-role="slider" onchange="startshiftprocess();">
+		<option value="off">Stop</option>
+		<option value="on">Start</option>
+	</select></div>
+	<div class="center-wrapper">
+<a data-role="button" id="shiftupdate" style="display: none; background:#0E74BC;color:white;" data-inline="true"class="custom-btn" onclick="doshiftupdate();">Update Shift Activities</a>
+    		</div>
+    		<ul data-role="listview" id="prevupdate" style="display: none;" data-inset="true" >
+<li class="wikia">
+<h2 id="updateheader">Previous Shift Update</h2>
+<p id="updatecontent"></p>
+
+</li>
+</ul>
+			
+		</div>
+
+<div data-role="page" data-dialog="true" id="shiftdialog">
+  <div data-role="header"  style="background:#0E74BC;color:white;">
+  <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="updatecancel();"></a>
+    <h1>Shift Update!</h1>
+  </div>
+<textarea id="updateshift"></textarea>
+	<div class="center-wrapper">
+<a data-role="button"style="background:#0E74BC;color:white; " onclick="updactivityhandover();">Send update to next shift person</a>
+    		</div>
+</div>
+<div data-role="page" data-dialog="true" id="swapdialog">
+  <div data-role="header"  style="background:#0E74BC;color:white;">
+  <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="swapcancel();"></a>
+    <h1>Swap Shift!</h1>
+  </div>
+  
+  <div data-role="content"> 
+    <div class="ui-field-contain" data-role="fieldcontain" id="teammember-select"style="position: static;">
+    <p>Select the team member with whom you would like to swap your shift with</p>
+    <select name="swapselect" id="swapselect" onchange="swapselect();">
+    
+    </select>
+     <p id="swapmembertext"></p>
+     <div id="swapmembershift" style="display:none">
+     <select name="swapmembershift1" id="swapmembershift1"  onchange="swapmembershift();">
+     
+        <option value="PL">PL</option>
+        <option value="Sick Leave">Sick Leave</option>
+        <option value="First">First </option>
+        <option value="Second">Second</option>
+        <option value="Third">Third</option>
+        <option value="General">General</option>
+        
+            </select>
+            </div>
+      <p id="swapreason1" style="display:none"> Reason for swap</p>      
+     <textarea id="swapreason" style="display:none"></textarea>
+</div>
+</div>
+	<div class="center-wrapper">
+	
+<a data-role="button"style="background:#0E74BC;color:white;" onclick="swapmyshift();">Swap My Shift</a>
+    		</div>
+</div>
+ <div data-role="page" id="onshiftmanager">
+   <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">On Shift</h1>
+
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+    <div data-role="main" >
+        <div id="smcollapse" data-role="collapsible"  style="background: #1C75BC;" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4 >SAPSM <span class="ui-li-count" id="sapsmCount" >0</span></h4>
+			<span id="SAPSM" ></span>
+        </div>
+        <div id="accesscollapse" data-role="collapsible"  data-collapsed="true" data-theme="b" data-content-theme="b">
+             <h4>SAPACCESS<span class="ui-li-count" id="SAPACCESScount">0</span></h4>
+<span id="SAPACCESS"></span>
+
+        </div>
+        <div id="systcollapse"data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>PESSYSTMAINT<span class="ui-li-count" id="PESSYSTMAINTcount">0</span></h4>
+<span id="PESSYSTMAINT"></span>
+
+        </div>
+                <div id="bicollapse"data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>SAPBI<span class="ui-li-count" id="SAPBIcount">0</span></h4>
+<span id="SAPBI"></span>
+
+        </div>
+                <div id="csacollapse"data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>CSA<span class="ui-li-count" id="CSAcount">0</span></h4>
+<span id="CSA"></span>
+
+        </div>
+               <div id="woicollapse" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>WOI<span class="ui-li-count" id="WOIcount">0</span></h4>
+<span id="WOI"></span>
+
+
+        </div>
+        <div id="pesadmincollapse"data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>PESACCESSADMIN<span class="ui-li-count" id="PESACCESSADMINcount">0</span></h4>
+<span id="PESACCESSADMIN"></span>
+
+        </div>
+        <div id="bondcollapse" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>Bond<span class="ui-li-count" id="BONDcount">0</span></h4>
+<span id="BOND"></span>
+
+        </div>
+        <div id="transportcollapse" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>PESTRANSPORT<span class="ui-li-count" id="PESTRANSPORTcount">0</span></h4>
+<span id="PESTRANSPORT"></span>
+
+        </div>
+        <div id="emtoriescollapse" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>EMTORIES<span class="ui-li-count" id="EMTORIEScount">0</span></h4>
+<span id="EMTORIES"></span>
+
+        </div>
+        <div id="infracollapse" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b" >
+             <h4>PESINFRA<span class="ui-li-count" id="PESINFRAcount">0</span></h4>
+<span id="PESINFRA"></span>
+
+        </div>
+    </div>   		
+    </div>     
+    <div data-role="page" id="qendmain">
+   <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">Q-End Support</h1>
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+    <div data-role="content"> 
+    <div class="ui-field-contain" data-role="fieldcontain" id="team-select1"style="position: static;">
+    <select name="qendselect" id="qendselect"  onchange="qteamchange();">
+        <option value="select">Select a Team</option>
+        <option value="BOND">BOND</option>
+        <option value="PESINFRA">PESINFRA</option>
+        <option value="SAPSM">SAPSM</option>
+        <option value="EMTORIES">EMTORIES</option>
+        <option value="SAPACCESS">SAPACCESS</option>
+        <option value="PESSYSTMAINT">PESSYSTMAINT</option>
+        <option value="SAPBI">SAPBI</option>
+        <option value="CSA">CSA</option>
+        <option value="WOI">WOI</option>
+        <option value="PESTRANSPORT">PESTRANSPORT</option>
+        <option value="PESACCESSADMIN">PESACCESSADMIN</option>
+            </select>
+</div>
+<table id="emp_name1" class="table1"></table>
+<div class="table2">
+<table id="emp_data1"></table>
+</div> 
+
+</div>
+</div> 
+<div data-role="page" id="shiftactupg">
+<div data-role="header">
+<a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+<h1 class="Home">Shift Actuals</h1>
+<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+<img src="images/logout.png" style="width: 25px;">
+</a>
+</div>
+<div data-role="content"> 
+<div class="ui-field-contain" data-role="fieldcontain" id="month-select" style="position: static;">
+<select name="select-month" id="select-month" onchange="monthchange();">
+
+</select>
+
+</div>
+<table id="emp_act" class="table1"></table>
+<div class="table2">
+<table id="emp_act1"></table>
+</div> 
+</div> 
+</div>
+<div data-role="page" id="shiftactualsmanager">
+<div data-role="header">
+<a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+<h1 class="Home">Shift Actuals</h1>
+<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+<img src="images/logout.png" style="width: 25px;">
+</a>
+</div>
+<div data-role="content"> 
+<div class="ui-field-contain" data-role="fieldcontain" id="team-select"style="position: static;">
+<select name="select-custom-23" id="select-custom-23"  onchange="monthchange1();" >
+
+</select>
+</div>
+<table id="emp_name_pr" class="table1">
+</table>
+<div class="table2" >
+<table id="emp_data_pr"></table>
+</div>
+</div>
+</div>
+<!-- Code for PM To see the shift actuals -->
+ <div data-role="page" id="pmviewshiftact">
+ <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext btn-bg" onclick="home();"></a>
+            <h1 class="Home">Shift Actuals</h1>
+			<a href="#" data-direction="reverse" onclick="logout();" data-transition="slide" data-iconpos="notext" class="ui-btn-right btn-bg">
+			<img src="images/logout.png" style="width: 25px;">
+			</a>
+		</div>
+  
+  <div data-role="content"> 
+    <div class="ui-field-contain" id="shiftactmangteam"data-role="fieldcontain" id="teammember-select"style="position: static;">
+    
+    <select id="teamsgroups" onchange="selectteams()">
+	    <option value="0">Select a Team</option>
+        <option value="BOND">BOND</option>
+        <option value="PESINFRA">PESINFRA</option>
+        <option value="SAPSM">SAPSM</option>
+        <option value="EMTORIES">EMTORIES</option>
+        <option value="SAPACCESS">SAPACCESS</option>
+        <option value="PESSYSTMAINT">PESSYSTMAINT</option>
+        <option value="SAPBI">SAPBI</option>
+        <option value="CSA">CSA</option>
+        <option value="WOI">WOI</option>
+        <option value="PESTRANSPORT">PESTRANSPORT</option>
+        <option value="PESACCESSADMIN">PESACCESSADMIN</option>
+	</select>		
+     </div>
+     <div id="month-select3" style="display:none">
+     <select name="monthsselect" id="monthsselect"  onchange="chselectmonth();" >
+        
+            </select>
+            </div>
+  <table id="emp_namesa" class="table1"></table>
+<div class="table2">
+<table id="emp_datasa"></table>
+</div>    
+</div>
+</div>
+
+    <!-- Code for PM To see the shift actuals -->  
+     <script src="js/initOptions.js"></script>
+
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    		<script src="js/CustomAuthenticatorRealmChallengeHandler.js"></script>
+    	</body>
+</html> 
